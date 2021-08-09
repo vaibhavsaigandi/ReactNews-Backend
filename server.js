@@ -10,7 +10,7 @@ const AuthRoute = require("./routes/auth");
 const cors = require("cors");
 const multer = require("multer");
 const path = require("path");
-PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 8000;
 dotenv.config();
 const app = express();
 
