@@ -41,10 +41,10 @@ exports.login = async(req, res) => {
         // const user = new User({ email, password });
     try {
         const user = await User.findOne({ email });
-        !user && res.status(401).json({ message: 'User Does not Exsist' })
+        !user && res.status(401).json({ error: 'User Does not Exsist' })
         const validPassword = await bcrypt.compare(password, user.password); //compare the password.....
         !validPassword && res.status(401).json({
-            message: 'Invalid password',
+            error: 'Invalid password',
         })
         const token = jwt.sign({ email }, //payload, secret key and 
             process.env.JWT_PASSCODE, //expire data can be specified as the third argument.
