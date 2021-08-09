@@ -40,5 +40,6 @@ app.use(morgan("dev"));
 app.use("/api", AuthRoute);
 // app.use("/api/posts", PostRoute);
 app.listen(PORT, () => {
+        console.log(PORT)
     console.log("BackEnd is running");
 });
